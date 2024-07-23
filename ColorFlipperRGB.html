@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    body {
+
+        padding: 0;
+        margin: 0;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    h1{
+        background-color: black;
+        color: white;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+    }
+
+    h2 {
+        background-color: white;
+        color: black;
+        font-family: 'segoe ui';
+        font-weight: 500;
+        font-variant-caps: all-petite-caps;
+        border-radius: 10px;
+        border: 5px solid black;
+        padding: 10px;
+    }
+
+    #btn {
+        width: 20%;
+        height: 45px;
+        border-radius: 10px;
+        border: none;
+        background-color: dodgerblue;
+        color: white;
+        font-size: 25px;
+        font-family: 'segoe ui';
+        font-weight: 700;
+        transition: 600ms;
+    }
+
+    #btn:hover {
+        background-color: black;
+        color: white;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+    <link rel="Javascript" href="hex.js">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Color Flipper</h1>
+        <h2>
+            background color:
+            <span class="color">
+                White
+            </span>
+        </h2>
+        <button class="btn btn-hero" id="btn">Color</button>
+    </div>
+
+
+    <!-- Javascript -->
+    <script>
+
+        const btn = document.getElementById('btn')
+        const colorSpace = document.querySelector('.color')
+        btn.addEventListener('click', getBackground)
+        // Background color
+        function getBackground() {
+            const color = `rgb(${red()},${green()},${blue()})`
+            document.body.style.backgroundColor = color;
+            colorSpace.textContent = color;
+            // console.log(color)
+        }
+
+        // Random Numbers for Red Green Blue
+        const red = () => {
+            return Math.floor(Math.random() * 256)
+        }
+        const green = () => {
+            return Math.floor(Math.random() * 256)
+        }
+        const blue = () => {
+            return Math.floor(Math.random() * 256)
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
